@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Te amo mucho Rebeca</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      color: #d16b86;
+      font-size: 2.5rem;
+      text-shadow: 1px 1px 2px #ccc;
+    }
+
+    .image-container {
+      max-width: 90%;
+      width: 400px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: fall 10s linear infinite;
+      opacity: 0.7;
+      z-index: 0;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes fall {
+      0% {
+        top: -20px;
+        opacity: 0.8;
+      }
+      100% {
+        top: 100vh;
+        opacity: 0;
+      }
+    }
+
+    .youtube-player {
+      position: absolute;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Te amo mucho Rebeca</h1>
+
+  <div class="image-container">
+    <img src="https://i.postimg.cc/8Cgnr70z/ae85985a4552af721d5937207da551fe.jpg" alt="Foto de Rebeca">
+  </div>
+
+  <!-- Música: Halley's Comet de Billie Eilish -->
+  <iframe class="youtube-player"
+    src="https://www.youtube.com/embed/3j3_xjwfLx8?autoplay=1&loop=1&playlist=3j3_xjwfLx8"
+    title="Halley's Comet"
+    allow="autoplay"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+
+  <script>
+    function crearCorazones() {
+      for (let i = 0; i < 50; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDelay = Math.random() * 10 + 's';
+        heart.style.top = '-20px';
+        document.body.appendChild(heart);
+      }
+    }
+    crearCorazones();
+  </script>
+</body>
+</html>
