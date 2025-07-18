@@ -1,97 +1,92 @@
 <!DOCTYPE html><html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Feliz Cumpleaños Rebeca</title>
   <style>
-    body {
+    * {
       margin: 0;
-      background-color: #fce4ec;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #fce4ec;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      font-family: 'Segoe UI', sans-serif;
-    }.book {
-  width: 90vw;
-  max-width: 1000px;
-  height: 90vh;
-  background: url('https://i.postimg.cc/Y9RWqC07/libreta-fondo.jpg') center/cover no-repeat;
-  display: flex;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-  position: relative;
-  overflow: hidden;
-}
-
-.page {
-  width: 50%;
-  padding: 40px 30px;
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.8);
-  border-left: 1px dashed #ccc;
-  overflow-y: auto;
-  white-space: pre-wrap;
-  font-size: 1.1em;
-  line-height: 1.6em;
-}
-
-.spiral {
-  width: 20px;
-  background: repeating-linear-gradient(
-    to bottom,
-    #888,
-    #888 6px,
-    transparent 6px,
-    transparent 12px
-  );
-}
-
-.cover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('https://i.postimg.cc/qvHvxZKR/tapa-libro.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: #fff;
-  font-size: 2em;
-  z-index: 2;
-  cursor: pointer;
-  transition: transform 1s ease;
-  transform-origin: left;
-  border-radius: 12px;
-}
-
-.cover.closed {
-  transform: rotateY(0deg);
-}
-
-.cover.open {
-  transform: rotateY(-180deg);
-}
-
+      font-family: 'Comic Sans MS', cursive;
+    }
+    .book {
+      width: 800px;
+      height: 500px;
+      perspective: 2000px;
+      position: relative;
+    }
+    .cover {
+      width: 100%;
+      height: 100%;
+      background: url('https://i.postimg.cc/pLdWzLLn/9a9dcf5336abf1fd5f12c6d35724c409.jpg') no-repeat center/cover;
+      position: absolute;
+      z-index: 5;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 1s;
+      transform-origin: left;
+    }
+    .cover h1 {
+      color: #fff;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px #00000080;
+    }
+    .cover.open {
+      transform: rotateY(-180deg);
+    }
+    .pages {
+      width: 100%;
+      height: 100%;
+      background: url('https://i.postimg.cc/Wb8pdkTv/c6adc8e632224675c799215357921b89.jpg') repeat center/cover;
+      position: absolute;
+      border-radius: 10px;
+      padding: 40px;
+      padding-left: 60px;
+      overflow-y: auto;
+      color: #333;
+      z-index: 1;
+    }
+    .pages h2 {
+      margin-bottom: 10px;
+      color: #c2185b;
+    }
+    .pages p {
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
-<body><div class="book">
-  <div class="cover closed" onclick="abrirLibro(this)">
-    <div>Feliz Cumpleaños Rebeca</div>
-  </div>  <div class="page" id="pagina1">
-    Hoy quería decirte muchas cosas, pero ni sé cómo empezar…
-    A veces siento que no me alcanzan las palabras para lo que siento por ti. Me haces feliz, como no tienes idea.
-  </div>  <div class="spiral"></div>  <div class="page" id="pagina2">
-    Me encantas de formas que ni yo misma sabía que existían.
-    Eres todo lo que me hace bien, y aunque a veces te lo diga con rabia o sarcasmo, te quiero muchísimo.
+<body>
+  <div class="book">
+    <div class="cover" onclick="this.classList.add('open')">
+      <h1>Feliz Cumpleaños Rebeca</h1>
+    </div>
+    <div class="pages">
+      <h2>Página 1</h2>
+      <p>Desde que entraste en mi vida, todo tiene un color más bonito. Eres esa chispa que me hace sentir viva, y este libro es solo una pequeña forma de decirte cuánto significas para mí.</p>
+      <h2>Página 2</h2>
+      <p>Gracias por existir, por cada palabra que me das, por cada sonrisa que provocas en mí. Rebeca, eres magia y te mereces el universo entero envuelto en papel rosado. 🎀</p>
+      <h2>Página 3</h2>
+      <p>No importa la distancia o lo que pase, aquí tienes un pedacito de mi corazón guardado entre estas hojas, como promesa de que siempre voy a estar para ti.</p>
+      <h2>Página 4</h2>
+      <p>Feliz cumpleaños, amor. Este cuaderno está lleno de ti. De lo que somos, de lo que siento, y de todo lo que quiero construir contigo.</p>
+    </div>
   </div>
-</div><script>
-  function abrirLibro(cubierta) {
-    cubierta.classList.remove('closed');
-    cubierta.classList.add('open');
-    cubierta.style.zIndex = -1;
-  }
-</script></body>
+  <script>
+    document.querySelector('.cover').addEventListener('click', () => {
+      document.querySelector('.cover').classList.add('open');
+    });
+  </script>
+</body>
 </html>
