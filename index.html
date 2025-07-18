@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Feliz cumpleaños Rebeca 🌷</title>
@@ -8,135 +9,141 @@
       padding: 0;
       background: white;
       overflow: hidden;
-    }#rain {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
+      font-style: italic;
+    }
 
-.ribbon {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-image: url('https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg');
-  background-size: cover;
-  animation: fall linear infinite;
-}
+    #rain {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
 
-@keyframes fall {
-  0% {
-    transform: translateY(-100px);
-  }
-  100% {
-    transform: translateY(100vh);
-  }
-}
+    .ribbon {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg');
+      background-size: cover;
+      animation: fall linear infinite;
+    }
 
-.book {
-  position: relative;
-  width: 90%;
-  max-width: 900px;
-  height: 600px;
-  margin: 50px auto;
-  perspective: 2000px;
-  z-index: 2;
-}
+    @keyframes fall {
+      0% { transform: translateY(-100px); }
+      100% { transform: translateY(100vh); }
+    }
 
-.page {
-  background: #fce4ec;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform-origin: left;
-  transition: transform 1s;
-  display: flex;
-  justify-content: space-between;
-  padding: 40px;
-  box-sizing: border-box;
-  font-style: italic;
-  font-weight: bold;
-  font-family: 'italic', bold;
-  font-size: 20px;
-}
+    .book {
+      position: relative;
+      width: 90%;
+      max-width: 900px;
+      height: 600px;
+      margin: 50px auto;
+      perspective: 2000px;
+      z-index: 2;
+    }
 
-.page img {
-  width: 45%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-}
+    .page {
+      background: #fce4ec;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-origin: left;
+      transition: transform 1s;
+      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+      box-sizing: border-box;
+      font-weight: bold;
+      font-family: sans-serif;
+      font-size: 20px;
+      font-style: italic;
+    }
 
-.page p {
-  width: 50%;
-  margin: 0;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-}
+    .page img {
+      width: 45%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+    }
 
-.cover {
-  background: url('https://i.postimg.cc/jdSbg6Dk/c6adc8e632224675c799215357921b89-2.jpg') no-repeat center center/cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  font-size: 30px;
-  text-align: center;
-  z-index: 5;
-}
+    .page p {
+      width: 50%;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+    }
 
-.controls {
-  margin-top: 20px;
-  text-align: center;
-  z-index: 3;
-  position: relative;
-}
+    .cover {
+      background: url('https://i.postimg.cc/jdSbg6Dk/c6adc8e632224675c799215357921b89-2.jpg') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      font-size: 50px;
+      text-align: center;
+      z-index: 5;
+      font-style: italic;
+      font-weight: bold;
+    }
 
-button {
-  background: #f8bbd0;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: bold;
-  font-style: italic;
-  margin: 0 10px;
-}
+    .controls {
+      margin-top: 20px;
+      text-align: center;
+      z-index: 3;
+      position: relative;
+    }
 
+    button {
+      background: #f8bbd0;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      font-style: italic;
+      margin: 0 10px;
+    }
   </style>
 </head>
 <body>
-  <div id="rain"></div>  <div class="book">
+  <div id="rain"></div>
+
+  <div class="book">
     <div class="page cover">
       Feliz cumpleaños Rebeca 🌷
-    </div><div class="page" id="page1">
-  <p>Desde que empecé a conocerte, todo fue distinto. Tienes algo que no sé cómo explicar, pero se siente bonito. Eres especial… por cómo hablas, por lo que dices, por esa forma tuya de hacer que todo se sienta más lindo sin esforzarte.</p>
-  <img src="https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg" />
-</div>
+    </div>
 
-<div class="page" id="page2">
-  <p>Contigo todo se siente diferente. No sé si lo notas, pero haces que uno se sienta querido, como si supieras exactamente qué decir, incluso en silencio. Tienes una manera tan tuya de estar, y eso se nota. Y vale mucho.</p>
-  <img src="https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg" />
-</div>
+    <div class="page" id="page1">
+      <p>Desde que empecé a conocerte, todo fue distinto. Tienes algo que no sé cómo explicar, pero se siente bonito. Eres especial… por cómo hablas, por lo que dices, por esa forma tuya de hacer que todo se sienta más lindo sin esforzarte.</p>
+      <img src="https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg" />
+    </div>
 
-<div class="page" id="page3">
-  <p>Gracias por estar, por no irte, por ser tú. Por hacerme sentir bien solo con hablarme. Por tener ese corazón tan bonito. Eres de esas personas que no se olvidan, porque lo que das, se siente de verdad.</p>
-  <img src="https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg" />
-</div>
+    <div class="page" id="page2">
+      <p>Contigo todo se siente diferente. No sé si lo notas, pero haces que uno se sienta querido, como si supieras exactamente qué decir, incluso en silencio. Tienes una manera tan tuya de estar, y eso se nota. Y vale mucho.</p>
+      <img src="https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg" />
+    </div>
 
-<div class="page" id="page4">
-  <p>Hoy es tu día y quería decirte algo simple pero sincero: me alegra mucho que estés en mi vida. Me alegra haberte conocido. Y te deseo todo lo bonito, porque te lo mereces de verdad. Feliz cumpleaños.</p>
-  <img src="https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg" />
-</div>
+    <div class="page" id="page3">
+      <p>Gracias por estar, por no irte, por ser tú. Por hacerme sentir bien solo con hablarme. Por tener ese corazón tan bonito. Eres de esas personas que no se olvidan, porque lo que das, se siente de verdad.</p>
+      <img src="https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg" />
+    </div>
 
-  </div>  <div class="controls">
+    <div class="page" id="page4">
+      <p>Hoy es tu día y quería decirte algo simple pero sincero: me alegra mucho que estés en mi vida. Me alegra haberte conocido. Y te deseo todo lo bonito, porque te lo mereces de verdad. Feliz cumpleaños.</p>
+      <img src="https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg" />
+    </div>
+  </div>
+
+  <div class="controls">
     <button onclick="prevPage()">← Anterior</button>
     <button onclick="nextPage()">Siguiente →</button>
-  </div>  <script>
-    // Ribbon rain
+  </div>
+
+  <script>
     const rainContainer = document.getElementById("rain");
     for (let i = 0; i < 50; i++) {
       let ribbon = document.createElement("div");
@@ -147,7 +154,6 @@ button {
       rainContainer.appendChild(ribbon);
     }
 
-    // Book flipping
     let currentPage = 0;
     const pages = document.querySelectorAll(".page");
     pages.forEach((page, index) => {
@@ -167,5 +173,6 @@ button {
         pages[currentPage].style.transform = "rotateY(0deg)";
       }
     }
-  </script></body>
+  </script>
+</body>
 </html>
