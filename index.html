@@ -1,151 +1,170 @@
 <!DOCTYPE html><html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Feliz cumpleaños Rebeca</title>
+  <title>Feliz cumpleaños Rebeca 🌷</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       background: white;
-      overflow-x: hidden;
-    }/* Lluvia de moñitos */
-.ribbon {
+      overflow: hidden;
+    }#rain {
   position: fixed;
-  top: -50px;
-  width: 30px;
-  height: 30px;
-  background-image: url('https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg');
-  background-size: cover;
-  animation: fall linear infinite;
-  z-index: 0;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(110vh);
-  }
-}
-
-.book-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
   z-index: 1;
 }
 
+.ribbon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url('https://i.postimg.cc/fT7JhM53/ribbon.png');
+  background-size: cover;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
 .book {
-  display: flex;
-  flex-direction: column;
-  width: 600px;
-  height: 400px;
-  background-color: #fce4ec; /* rosa clarito */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  border-radius: 10px;
-  font-family: 'Georgia', cursive;
-  font-style: italic;
-  font-weight: bold;
-  padding: 40px;
   position: relative;
+  width: 90%;
+  max-width: 900px;
+  height: 600px;
+  margin: 50px auto;
+  perspective: 2000px;
+  z-index: 2;
 }
 
 .page {
-  display: none;
-}
-
-.page.active {
-  display: block;
-}
-
-.nav {
-  margin-top: 20px;
+  background: #fce4ec;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-origin: left;
+  transition: transform 1s;
   display: flex;
   justify-content: space-between;
+  padding: 40px;
+  box-sizing: border-box;
+  font-style: italic;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 20px;
+}
+
+.page img {
+  width: 45%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.page p {
+  width: 50%;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.cover {
+  background: url('https://i.postimg.cc/t4BQj9WV/book-cover-pink-leather.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+  z-index: 5;
+}
+
+.controls {
+  margin-top: 20px;
+  text-align: center;
+  z-index: 3;
+  position: relative;
 }
 
 button {
-  background-color: #f48fb1;
-  color: white;
+  background: #f8bbd0;
   border: none;
   padding: 10px 20px;
-  border-radius: 20px;
+  font-size: 16px;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: bold;
+  font-style: italic;
+  margin: 0 10px;
 }
 
   </style>
 </head>
 <body>
-  <!-- Lluvia de moñitos -->
-  <script>
-    for (let i = 0; i < 40; i++) {
-      let ribbon = document.createElement("div");
-      ribbon.classList.add("ribbon");
-      ribbon.style.left = Math.random() * 100 + "vw";
-      ribbon.style.animationDuration = (Math.random() * 2 + 1) + "s";
-      document.body.appendChild(ribbon);
-    }
-  </script>  <div class="book-container">
-    <div class="book">
-      <div class="page active">
-        Feliz cumpleaños Rebeca 🌷
-      </div>
-      <div class="page">
-        Desde que empecé a conocerte, todo fue distinto.<br>
-        Tienes algo que no sé cómo explicar, pero se siente bonito.<br>
-        Eres especial… por cómo hablas, por lo que dices,<br>
-        por esa forma tuya de hacer que todo se sienta más lindo sin esforzarte.
-      </div>
-      <div class="page">
-        Contigo todo se siente diferente.<br>
-        No sé si lo notas, pero haces que uno se sienta querido,<br>
-        como si supieras exactamente qué decir, incluso en silencio.<br>
-        Tienes una manera tan tuya de estar, y eso se nota. Y vale mucho.
-      </div>
-      <div class="page">
-        Gracias por estar, por no irte, por ser tú.<br>
-        Por hacerme sentir bien solo con hablarme.<br>
-        Por tener ese corazón tan bonito.<br>
-        Eres de esas personas que no se olvidan,<br>
-        porque lo que das, se siente de verdad.
-      </div>
-      <div class="page">
-        Hoy es tu día y quería decirte algo simple pero sincero:<br>
-        me alegra mucho que estés en mi vida.<br>
-        Me alegra haberte conocido.<br>
-        Y te deseo todo lo bonito, porque te lo mereces de verdad.<br>
-        Feliz cumpleaños
-      </div><div class="nav">
-    <button onclick="prevPage()">← Anterior</button>
-    <button onclick="nextPage()">Siguiente →</button>
-  </div>
+  <div id="rain"></div>  <div class="book">
+    <div class="page cover">
+      Feliz cumpleaños Rebeca 🌷
+    </div><div class="page" id="page1">
+  <p>Desde que empecé a conocerte, todo fue distinto. Tienes algo que no sé cómo explicar, pero se siente bonito. Eres especial… por cómo hablas, por lo que dices, por esa forma tuya de hacer que todo se sienta más lindo sin esforzarte.</p>
+  <img src="https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg" />
 </div>
 
-  </div>  <script>
-    let current = 0;
-    const pages = document.querySelectorAll('.page');
+<div class="page" id="page2">
+  <p>Contigo todo se siente diferente. No sé si lo notas, pero haces que uno se sienta querido, como si supieras exactamente qué decir, incluso en silencio. Tienes una manera tan tuya de estar, y eso se nota. Y vale mucho.</p>
+  <img src="https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg" />
+</div>
 
-    function showPage(index) {
-      pages.forEach((p, i) => {
-        p.classList.remove('active');
-        if (i === index) {
-          p.classList.add('active');
-        }
-      });
+<div class="page" id="page3">
+  <p>Gracias por estar, por no irte, por ser tú. Por hacerme sentir bien solo con hablarme. Por tener ese corazón tan bonito. Eres de esas personas que no se olvidan, porque lo que das, se siente de verdad.</p>
+  <img src="https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg" />
+</div>
+
+<div class="page" id="page4">
+  <p>Hoy es tu día y quería decirte algo simple pero sincero: me alegra mucho que estés en mi vida. Me alegra haberte conocido. Y te deseo todo lo bonito, porque te lo mereces de verdad. Feliz cumpleaños.</p>
+  <img src="https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg" />
+</div>
+
+  </div>  <div class="controls">
+    <button onclick="prevPage()">← Anterior</button>
+    <button onclick="nextPage()">Siguiente →</button>
+  </div>  <script>
+    // Ribbon rain
+    const rainContainer = document.getElementById("rain");
+    for (let i = 0; i < 50; i++) {
+      let ribbon = document.createElement("div");
+      ribbon.className = "ribbon";
+      ribbon.style.left = Math.random() * 100 + "vw";
+      ribbon.style.animationDuration = (Math.random() * 1 + 0.8) + "s";
+      ribbon.style.opacity = Math.random();
+      rainContainer.appendChild(ribbon);
     }
 
+    // Book flipping
+    let currentPage = 0;
+    const pages = document.querySelectorAll(".page");
+    pages.forEach((page, index) => {
+      page.style.zIndex = pages.length - index;
+    });
+
     function nextPage() {
-      if (current < pages.length - 1) {
-        current++;
-        showPage(current);
+      if (currentPage < pages.length - 1) {
+        pages[currentPage].style.transform = "rotateY(-180deg)";
+        currentPage++;
       }
     }
 
     function prevPage() {
-      if (current > 0) {
-        current--;
-        showPage(current);
+      if (currentPage > 0) {
+        currentPage--;
+        pages[currentPage].style.transform = "rotateY(0deg)";
       }
     }
   </script></body>
