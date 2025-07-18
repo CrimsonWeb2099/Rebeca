@@ -9,7 +9,10 @@
       padding: 0;
       background: white;
       overflow: hidden;
-      font-style: italic;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
 
     #rain {
@@ -39,9 +42,9 @@
       width: 90%;
       max-width: 900px;
       height: 600px;
-      margin: 50px auto;
       perspective: 2000px;
       z-index: 2;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
     }
 
     .page {
@@ -55,10 +58,10 @@
       justify-content: space-between;
       padding: 40px;
       box-sizing: border-box;
+      font-style: italic;
       font-weight: bold;
       font-family: sans-serif;
       font-size: 20px;
-      font-style: italic;
     }
 
     .page img {
@@ -82,7 +85,7 @@
       justify-content: center;
       align-items: center;
       color: black;
-      font-size: 50px;
+      font-size: 40px;
       text-align: center;
       z-index: 5;
       font-style: italic;
@@ -90,10 +93,11 @@
     }
 
     .controls {
-      margin-top: 20px;
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
       text-align: center;
       z-index: 3;
-      position: relative;
     }
 
     button {
@@ -116,7 +120,7 @@
     <div class="page cover">
       Feliz cumpleaños Rebeca 🌷
     </div>
-
+    
     <div class="page" id="page1">
       <p>Desde que empecé a conocerte, todo fue distinto. Tienes algo que no sé cómo explicar, pero se siente bonito. Eres especial… por cómo hablas, por lo que dices, por esa forma tuya de hacer que todo se sienta más lindo sin esforzarte.</p>
       <img src="https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg" />
@@ -144,6 +148,7 @@
   </div>
 
   <script>
+    // Efecto lluvia
     const rainContainer = document.getElementById("rain");
     for (let i = 0; i < 50; i++) {
       let ribbon = document.createElement("div");
@@ -154,6 +159,7 @@
       rainContainer.appendChild(ribbon);
     }
 
+    // Páginas
     let currentPage = 0;
     const pages = document.querySelectorAll(".page");
     pages.forEach((page, index) => {
