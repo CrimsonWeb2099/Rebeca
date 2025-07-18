@@ -2,147 +2,155 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Feliz cumpleaños Rebeca</title>
   <style>
-    html, body {
+    body {
       margin: 0;
       padding: 0;
       background: #f2f2f2;
       font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
     .book {
       width: 90vw;
-      height: 95vh;
-      margin: 20px auto;
-      position: relative;
+      height: 90vh;
       perspective: 2000px;
+      position: relative;
+    }
+
+    .cover {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #ffc9d9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #fff;
+      border: 2px solid #b5698e;
+      border-radius: 10px;
+      backface-visibility: hidden;
+      transform-origin: left;
+      transition: transform 1s;
+      z-index: 5;
+    }
+
+    .book.open .cover {
+      transform: rotateY(-180deg);
     }
 
     .page {
+      position: absolute;
       width: 100%;
       height: 100%;
-      position: absolute;
-      transform-style: preserve-3d;
-      transition: transform 1s;
-      transform-origin: left center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      overflow: hidden;
       background: white;
-    }
-
-    .tapa {
-      background-image: url('https://i.postimg.cc/9QxwbLM6/portada-textura-rosada.jpg');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      font-family: 'Georgia', serif;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: inset 0 0 20px rgba(0,0,0,0.4);
-      border: 5px solid #d48ea2;
-      border-radius: 8px;
-    }
-
-    .cover-content h1 {
-      font-size: 36px;
-      text-align: center;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-      line-height: 1.3;
-    }
-
-    .open .page:nth-child(even) {
-      transform: rotateY(-180deg);
+      border: 2px solid #b5698e;
+      border-radius: 10px;
       z-index: 1;
     }
 
-    .book.open .page:nth-child(odd) {
-      z-index: 2;
+    .page .img-side, .page .text-side {
+      width: 50%;
+      height: 100%;
     }
 
-    .page-content {
-      display: flex;
+    .page .img-side img {
       width: 100%;
       height: 100%;
-    }
-
-    .page img {
-      width: 50%;
-      height: 100%;
       object-fit: cover;
+      border-radius: 8px 0 0 8px;
     }
 
-    .text {
-      width: 50%;
+    .page .text-side {
       padding: 40px;
-      font-size: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #fff4f6;
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #333;
+      background: #fff0f4;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .page:nth-child(2) {
+      z-index: 4;
+    }
+    .page:nth-child(3) {
+      z-index: 3;
+    }
+    .page:nth-child(4) {
+      z-index: 2;
+    }
+    .page:nth-child(5) {
+      z-index: 1;
     }
 
     button {
-      margin: 20px auto;
-      display: block;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       padding: 10px 20px;
-      font-size: 16px;
-      background: #d48ea2;
+      font-size: 1em;
       border: none;
+      background: #b5698e;
       color: white;
-      cursor: pointer;
       border-radius: 5px;
+      cursor: pointer;
     }
 
-    button:hover {
-      background: #c46c8d;
-    }
   </style>
 </head>
 <body>
   <div class="book" id="book">
-    <div class="page tapa">
-      <div class="cover-content">
-        <h1>Feliz cumpleaños<br>Rebeca</h1>
+    <div class="cover">Feliz cumpleaños Rebeca</div>
+
+    <div class="page">
+      <div class="img-side">
+        <img src="https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg" alt="" />
+      </div>
+      <div class="text-side">
+        Me siento afortunada de conocerte, de poder compartir contigo, de que formes parte de mis días aunque sea un ratito.
       </div>
     </div>
 
     <div class="page">
-      <div class="page-content">
-        <img src="https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg" />
-        <div class="text">Hay personas que simplemente llegan y lo cambian todo sin hacer mucho ruido, y tú fuiste una de esas personas.</div>
+      <div class="img-side">
+        <img src="https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg" alt="" />
+      </div>
+      <div class="text-side">
+        Tienes una forma única de alegrar, de hacer sentir segura a una persona con sólo ser tú.
       </div>
     </div>
 
     <div class="page">
-      <div class="page-content">
-        <img src="https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg" />
-        <div class="text">Me encanta cuando me cuentas de tu familia, cuando me hablas de las cosas que te emocionan, que amas, que te hacen quien eres.</div>
+      <div class="img-side">
+        <img src="https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg" alt="" />
+      </div>
+      <div class="text-side">
+        Y aunque a veces no lo veas, lo tienes todo para brillar.
       </div>
     </div>
 
     <div class="page">
-      <div class="page-content">
-        <img src="https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg" />
-        <div class="text">Gracias por estar, por ser tú. Por tener esa forma tan especial de hablar, de reírte, de contarme tus cosas sin filtros.</div>
+      <div class="img-side">
+        <img src="https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg" alt="" />
+      </div>
+      <div class="text-side">
+        Gracias por existir, por ser como eres y por permitirte ser parte de mí, aunque sea en este pequeño pedacito del mundo.
       </div>
     </div>
 
-    <div class="page">
-      <div class="page-content">
-        <img src="https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg" />
-        <div class="text">Me siento afortunada de conocerte, de poder compartir contigo, de que formes parte de mis días aunque sea un ratito.</div>
-      </div>
-    </div>
+    <button onclick="document.getElementById('book').classList.toggle('open')">Abrir libro</button>
   </div>
-
-  <button onclick="abrirLibro()">Abrir libro</button>
-
-  <script>
-    function abrirLibro() {
-      document.getElementById('book').classList.toggle('open');
-    }
-  </script>
 </body>
 </html>
