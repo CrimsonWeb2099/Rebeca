@@ -2,120 +2,133 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Te amo mucho Rebeca</title>
+  <title>Para ella</title>
   <style>
     body {
-      background-color: #fff0f5;
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
+      background-color: #000;
+      font-family: 'Segoe UI', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      z-index: 1;
+      min-height: 100vh;
     }
 
-    h1 {
-      color: #d16b86;
-      font-size: 2.5rem;
-      text-shadow: 1px 1px 2px #ccc;
-      z-index: 2;
+    .book {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100vw;
+      height: 100vh;
     }
 
-    .image-container {
-      max-width: 90%;
-      width: 400px;
-      border-radius: 20px;
+    .page {
+      width: 50%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      z-index: 2;
+      position: relative;
     }
 
-    img {
-      width: 100%;
-      display: block;
+    .image-page {
+      background-size: cover;
+      background-position: center;
     }
 
-    .heart {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: pink;
-      transform: rotate(45deg);
-      animation: fall 10s linear infinite;
-      opacity: 0.7;
-      z-index: 0;
+    .text-page {
+      background-color: #111;
+      color: #fff;
+      padding: 50px;
+      font-size: 1.8rem;
+      line-height: 1.6;
+      text-shadow: 1px 1px 4px #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .heart::before,
-    .heart::after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: pink;
-      border-radius: 50%;
+    .text-box {
+      max-width: 80%;
     }
 
-    .heart::before {
-      top: -10px;
-      left: 0;
-    }
-
-    .heart::after {
-      left: -10px;
-      top: 0;
-    }
-
-    @keyframes fall {
-      0% {
-        top: -20px;
-        opacity: 0.8;
+    @media (max-width: 768px) {
+      .book {
+        flex-direction: column;
       }
-      100% {
-        top: 100vh;
-        opacity: 0;
-      }
-    }
 
-    .video {
-      margin-top: 30px;
-      z-index: 2;
+      .page {
+        width: 100%;
+        height: 50vh;
+      }
+
+      .text-page {
+        padding: 20px;
+        font-size: 1.2rem;
+      }
+
+      .text-box {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Te amo mucho Rebeca</h1>
 
-  <div class="image-container">
-    <img src="https://i.postimg.cc/8Cgnr70z/ae85985a4552af721d5937207da551fe.jpg" alt="Foto de Rebeca">
+  <!-- Página 1 (izquierda imagen, derecha texto) -->
+  <div class="book">
+    <div class="page image-page" style="background-image: url('https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg');"></div>
+    <div class="page text-page">
+      <div class="text-box">
+        Desde que empecé a conocerte, todo fue distinto.  
+        Tienes algo que no sé cómo explicar, pero se siente bonito.  
+        Eres especial… por cómo hablas, por lo que dices,  
+        por esa forma tuya de hacer que todo se sienta más lindo sin esforzarte.
+      </div>
+    </div>
   </div>
 
-  <div class="video">
-    <iframe width="300" height="180"
-      src="https://www.youtube.com/embed/sElE_BfQ67s"
-      title="Apocalypse - Cigarettes After Sex"
-      frameborder="0"
-      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+  <!-- Página 2 (izquierda imagen, derecha texto) -->
+  <div class="book">
+    <div class="page image-page" style="background-image: url('https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg');"></div>
+    <div class="page text-page">
+      <div class="text-box">
+        Contigo todo se siente diferente.  
+        No sé si lo notas, pero haces que uno se sienta querido,  
+        como si supieras exactamente qué decir, incluso en silencio.  
+        Tienes una manera tan tuya de estar, y eso se nota. Y vale mucho.
+      </div>
+    </div>
   </div>
 
-  <script>
-    function crearCorazones() {
-      for (let i = 0; i < 50; i++) {
-        const heart = document.createElement('div');
-        heart.classList.add('heart');
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.animationDelay = Math.random() * 10 + 's';
-        heart.style.top = '-20px';
-        document.body.appendChild(heart);
-      }
-    }
-    crearCorazones();
-  </script>
+  <!-- Página 3 (izquierda imagen, derecha texto) -->
+  <div class="book">
+    <div class="page image-page" style="background-image: url('https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg');"></div>
+    <div class="page text-page">
+      <div class="text-box">
+        Gracias por estar, por no irte, por ser tú.  
+        Por hacerme sentir bien solo con hablarme.  
+        Por tener ese corazón tan bonito.  
+        Eres de esas personas que no se olvidan,  
+        porque lo que das, se siente de verdad.
+      </div>
+    </div>
+  </div>
+
+  <!-- Página 4 (izquierda imagen, derecha texto) -->
+  <div class="book">
+    <div class="page image-page" style="background-image: url('https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg');"></div>
+    <div class="page text-page">
+      <div class="text-box">
+        Hoy es tu día y quería decirte algo simple pero sincero:  
+        me alegra mucho que estés en mi vida.  
+        Me alegra haberte conocido.  
+        Y te deseo todo lo bonito, porque te lo mereces de verdad.  
+        Feliz cumpleaños.
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
