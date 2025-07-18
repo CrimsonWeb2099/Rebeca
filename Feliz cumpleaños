@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para ella</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .book {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .page {
+      width: 50%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .image-page {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .text-page {
+      background-color: #111;
+      color: #fff;
+      padding: 50px;
+      font-size: 1.8rem;
+      line-height: 1.6;
+      text-shadow: 1px 1px 4px #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .text-box {
+      max-width: 80%;
+    }
+
+    @media (max-width: 768px) {
+      .book {
+        flex-direction: column;
+      }
+
+      .page {
+        width: 100%;
+        height: 50vh;
+      }
+
+      .text-page {
+        padding: 20px;
+        font-size: 1.2rem;
+      }
+
+      .text-box {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Página 1 (izquierda imagen, derecha texto) -->
+  <div class="book">
+    <div class="page image-page" style="background-image: url('https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg');"></div>
+    <div class="page text-page">
+      <div class="text-box">
+        Desde que empecé a conocerte, todo fue distinto.  
+        Tienes algo que no sé cómo explicar, pero se siente bonito.  
+        Eres especial… por cómo hablas, por lo que dices,  
+        por esa forma tuya de hacer que todo se sienta más lindo sin esforzarte.
+      </div>
+    </div>
+  </div>
+
+  <!-- Página 2 (izquierda imagen, derecha texto) -->
+  <div class="book">
+    <div class="page image-page" style="background-image: url('https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg');"></div>
+    <div class="page text-page">
+      <div class="text-box">
+        Contigo todo se siente diferente.  
+        No sé si lo notas, pero haces que uno se sienta querido,  
+        como si supieras exactamente qué decir, incluso en silencio.  
+        Tienes una manera tan tuya de estar, y eso se nota. Y vale mucho.
+      </div>
+    </div>
+  </div>
+
+  <!-- Página 3 (izquierda imagen, derecha texto) -->
+  <div class="book">
+    <div class="page image-page" style="background-image: url('https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg');"></div>
+    <div class="page text-page">
+      <div class="text-box">
+        Gracias por estar, por no irte, por ser tú.  
+        Por hacerme sentir bien solo con hablarme.  
+        Por tener ese corazón tan bonito.  
+        Eres de esas personas que no se olvidan,  
+        porque lo que das, se siente de verdad.
+      </div>
+    </div>
+  </div>
+
+  <!-- Página 4 (izquierda imagen, derecha texto) -->
+  <div class="book">
+    <div class="page image-page" style="background-image: url('https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg');"></div>
+    <div class="page text-page">
+      <div class="text-box">
+        Hoy es tu día y quería decirte algo simple pero sincero:  
+        me alegra mucho que estés en mi vida.  
+        Me alegra haberte conocido.  
+        Y te deseo todo lo bonito, porque te lo mereces de verdad.  
+        Feliz cumpleaños.
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
