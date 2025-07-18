@@ -1,211 +1,166 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Feliz Cumpleaños Rebeca 🌷</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz cumpleaños Rebeca</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
       background: white;
-      font-family: 'Segoe Script', cursive;
       overflow: hidden;
-      position: relative;
-    }
+    }.rain {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
 
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 0;
-    }
+.rain span {
+  position: absolute;
+  top: -50px;
+  width: 30px;
+  height: 30px;
+  background-image: url('https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg');
+  background-size: cover;
+  animation: fall 2s linear infinite;
+  opacity: 0.8;
+}
 
-    .book-container {
-      position: relative;
-      width: 90%;
-      max-width: 900px;
-      height: 600px;
-      margin: 50px auto;
-      perspective: 2000px;
-      z-index: 1;
-    }
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
 
-    .page {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      backface-visibility: hidden;
-      background-color: #fff;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding: 30px;
-      background-size: cover;
-      background-position: center;
-    }
+.book {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  margin: 50px auto;
+  background: #fce4ec;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  display: flex;
+  z-index: 2;
+}
 
-    .text {
-      width: 48%;
-      font-size: 1.6rem;
-      font-style: italic;
-      font-weight: bold;
-      color: #3d3d3d;
-    }
+.page {
+  width: 50%;
+  padding: 40px;
+  box-sizing: border-box;
+  font-style: italic;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  color: #444;
+  font-size: 18px;
+  background-color: #fce4ec;
+  overflow-y: auto;
+}
 
-    .img-side {
-      width: 48%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      border-radius: 15px;
-    }
+.image {
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+  border-left: 2px solid #e0e0e0;
+}
 
-    .nav-buttons {
-      text-align: center;
-      margin-top: 20px;
-      z-index: 2;
-      position: relative;
-    }
+.controls {
+  text-align: center;
+  margin-top: 20px;
+  z-index: 2;
+}
 
-    .nav-buttons button {
-      font-size: 1.2rem;
-      padding: 10px 20px;
-      margin: 0 10px;
-      border: none;
-      background-color: #f6c1d4;
-      color: white;
-      font-weight: bold;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+.btn {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 0 20px;
+  border: none;
+  border-radius: 8px;
+  background: #f48fb1;
+  color: white;
+  font-style: italic;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
-    .nav-buttons button:hover {
-      background-color: #f88fb2;
-    }
+.btn:hover {
+  background: #ec407a;
+}
+
   </style>
 </head>
 <body>
-
-<canvas id="ribbonCanvas"></canvas>
-
-<div class="book-container" id="book">
-  <!-- Pages will be inserted here by JavaScript -->
-</div>
-
-<div class="nav-buttons">
-  <button onclick="prevPage()">← Anterior</button>
-  <button onclick="nextPage()">Siguiente →</button>
-</div>
-
-<script>
-  // 🎀 Lluvia de moñitos
-  const canvas = document.getElementById("ribbonCanvas");
-  const ctx = canvas.getContext("2d");
-
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  let ribbons = [];
-
-  function Ribbon() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * -canvas.height;
-    this.size = 20 + Math.random() * 15;
-    this.speed = 3 + Math.random() * 3;
-    this.img = new Image();
-    this.img.src = "https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg"; // moñito
-  }
-
-  function createRibbons() {
-    ribbons = [];
-    for (let i = 0; i < 60; i++) {
-      ribbons.push(new Ribbon());
-    }
-  }
-
-  function animateRibbons() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ribbons.forEach(r => {
-      ctx.drawImage(r.img, r.x, r.y, r.size, r.size);
-      r.y += r.speed;
-      if (r.y > canvas.height) {
-        r.y = -r.size;
-        r.x = Math.random() * canvas.width;
+  <div class="rain"></div>  <div class="book" id="book">
+    <div class="page">
+      <h2 style="text-align:center">Feliz cumpleaños Rebeca 🌷</h2>
+    </div>
+    <div class="image" style="background-image: url('https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg');"></div>
+  </div>  <div class="controls">
+    <button class="btn" onclick="prevPage()">← Anterior</button>
+    <button class="btn" onclick="nextPage()">Siguiente →</button>
+  </div>  <script>
+    const pages = [
+      {
+        text: "Desde que empecé a conocerte, todo fue distinto.\nTienes algo que no sé cómo explicar, pero se siente bonito.\nEres especial… por cómo hablas, por lo que dices,\npor esa forma tuya de hacer que todo se sienta más lindo sin esforzarte.",
+        img: "https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg"
+      },
+      {
+        text: "Contigo todo se siente diferente.\nNo sé si lo notas, pero haces que uno se sienta querido,\ncomo si supieras exactamente qué decir, incluso en silencio.\nTienes una manera tan tuya de estar, y eso se nota. Y vale mucho.",
+        img: "https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg"
+      },
+      {
+        text: "Gracias por estar, por no irte, por ser tú.\nPor hacerme sentir bien solo con hablarme.\nPor tener ese corazón tan bonito.\nEres de esas personas que no se olvidan,\nporque lo que das, se siente de verdad.",
+        img: "https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg"
+      },
+      {
+        text: "Hoy es tu día y quería decirte algo simple pero sincero:\nme alegra mucho que estés en mi vida.\nMe alegra haberte conocido.\nY te deseo todo lo bonito, porque te lo mereces de verdad.\nFeliz cumpleaños",
+        img: "https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg"
       }
-    });
-    requestAnimationFrame(animateRibbons);
-  }
+    ];
 
-  createRibbons();
-  animateRibbons();
+    let currentPage = 0;
 
-  // 📖 Páginas del libro
-  const pages = [
-    {
-      img: "https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg",
-      text: "Desde que empecé a conocerte, todo fue distinto.<br><br>Tienes algo que no sé cómo explicar, pero se siente bonito.<br><br>Eres especial… por cómo hablas, por lo que dices, por esa forma tuya de hacer que todo se sienta más lindo sin esforzarte."
-    },
-    {
-      img: "https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg",
-      text: "Contigo todo se siente diferente.<br><br>No sé si lo notas, pero haces que uno se sienta querido, como si supieras exactamente qué decir, incluso en silencio.<br><br>Tienes una manera tan tuya de estar, y eso se nota. Y vale mucho."
-    },
-    {
-      img: "https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg",
-      text: "Gracias por estar, por no irte, por ser tú.<br><br>Por hacerme sentir bien solo con hablarme.<br><br>Por tener ese corazón tan bonito.<br><br>Eres de esas personas que no se olvidan, porque lo que das, se siente de verdad."
-    },
-    {
-      img: "https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg",
-      text: "Hoy es tu día y quería decirte algo simple pero sincero:<br><br>me alegra mucho que estés en mi vida.<br><br>Me alegra haberte conocido.<br><br>Y te deseo todo lo bonito, porque te lo mereces de verdad.<br><br><br>Feliz cumpleaños 🎂"
+    function showPage(index) {
+      const book = document.getElementById("book");
+      book.innerHTML = `
+        <div class="page">
+          <p>${pages[index].text.replace(/\n/g, "<br>")}</p>
+        </div>
+        <div class="image" style="background-image: url('${pages[index].img}')"></div>
+      `;
     }
-  ];
 
-  let currentPage = 0;
-
-  function renderPage() {
-    const book = document.getElementById("book");
-    book.innerHTML = "";
-
-    const page = document.createElement("div");
-    page.className = "page";
-
-    const imgSide = document.createElement("div");
-    imgSide.className = "img-side";
-    imgSide.style.backgroundImage = `url(${pages[currentPage].img})`;
-
-    const text = document.createElement("div");
-    text.className = "text";
-    text.innerHTML = pages[currentPage].text;
-
-    page.appendChild(imgSide);
-    page.appendChild(text);
-    book.appendChild(page);
-  }
-
-  function nextPage() {
-    if (currentPage < pages.length - 1) {
-      currentPage++;
-      renderPage();
+    function nextPage() {
+      if (currentPage < pages.length - 1) {
+        currentPage++;
+        showPage(currentPage);
+      }
     }
-  }
 
-  function prevPage() {
-    if (currentPage > 0) {
-      currentPage--;
-      renderPage();
+    function prevPage() {
+      if (currentPage > 0) {
+        currentPage--;
+        showPage(currentPage);
+      }
     }
-  }
 
-  renderPage();
-</script>
+    // Crear lluvia de moñitos
+    function createRain() {
+      const rain = document.querySelector(".rain");
+      for (let i = 0; i < 40; i++) {
+        const drop = document.createElement("span");
+        drop.style.left = `${Math.random() * 100}%`;
+        drop.style.animationDuration = `${1 + Math.random() * 1}s`;
+        drop.style.opacity = `${0.6 + Math.random() * 0.4}`;
+        rain.appendChild(drop);
+      }
+    }
 
-</body>
+    window.onload = () => {
+      createRain();
+      showPage(currentPage);
+    };
+  </script></body>
 </html>
