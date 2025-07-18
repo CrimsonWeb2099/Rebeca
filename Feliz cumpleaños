@@ -1,134 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Para ella</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Libro para Rebeca</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/blasten/turn.js@master/lib/turn.min.js"></script>
   <style>
     body {
       margin: 0;
-      background-color: #000;
-      font-family: 'Segoe UI', sans-serif;
+      background: #fdf6f1;
+      font-family: 'Georgia', serif;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      align-items: center;
+      height: 100vh;
     }
 
-    .book {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100vw;
-      height: 100vh;
+    #flipbook {
+      width: 800px;
+      height: 500px;
     }
 
     .page {
-      width: 50%;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 400px;
+      height: 500px;
       overflow: hidden;
       position: relative;
-    }
-
-    .image-page {
-      background-size: cover;
-      background-position: center;
-    }
-
-    .text-page {
-      background-color: #111;
-      color: #fff;
-      padding: 50px;
-      font-size: 1.8rem;
-      line-height: 1.6;
-      text-shadow: 1px 1px 4px #000;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+      background: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
     }
 
-    .text-box {
-      max-width: 80%;
+    .page img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    @media (max-width: 768px) {
-      .book {
-        flex-direction: column;
-      }
+    .text-content {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+      white-space: pre-line;
+      padding: 20px;
+    }
 
-      .page {
-        width: 100%;
-        height: 50vh;
-      }
-
-      .text-page {
-        padding: 20px;
-        font-size: 1.2rem;
-      }
-
-      .text-box {
-        max-width: 100%;
-      }
+    .text-content p {
+      margin: 0;
     }
   </style>
 </head>
 <body>
 
-  <!-- Página 1 (izquierda imagen, derecha texto) -->
-  <div class="book">
-    <div class="page image-page" style="background-image: url('https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg');"></div>
-    <div class="page text-page">
-      <div class="text-box">
-        Desde que empecé a conocerte, todo fue distinto.  
-        Tienes algo que no sé cómo explicar, pero se siente bonito.  
-        Eres especial… por cómo hablas, por lo que dices,  
-        por esa forma tuya de hacer que todo se sienta más lindo sin esforzarte.
-      </div>
+<div id="flipbook">
+  <!-- Página 1 (Imagen) -->
+  <div class="page">
+    <img src="https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg" alt="Imagen 1" />
+  </div>
+
+  <!-- Página 2 (Texto) -->
+  <div class="page">
+    <div class="text-content">
+      <p>
+Desde que empecé a conocerte, todo fue distinto.  
+Tienes algo que no sé cómo explicar, pero se siente bonito.  
+Eres especial… por cómo hablas, por lo que dices,  
+por esa forma tuya de hacer que todo se sienta más lindo sin esforzarte.
+      </p>
     </div>
   </div>
 
-  <!-- Página 2 (izquierda imagen, derecha texto) -->
-  <div class="book">
-    <div class="page image-page" style="background-image: url('https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg');"></div>
-    <div class="page text-page">
-      <div class="text-box">
-        Contigo todo se siente diferente.  
-        No sé si lo notas, pero haces que uno se sienta querido,  
-        como si supieras exactamente qué decir, incluso en silencio.  
-        Tienes una manera tan tuya de estar, y eso se nota. Y vale mucho.
-      </div>
+  <!-- Página 3 (Imagen) -->
+  <div class="page">
+    <img src="https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg" alt="Imagen 2" />
+  </div>
+
+  <!-- Página 4 (Texto) -->
+  <div class="page">
+    <div class="text-content">
+      <p>
+Contigo todo se siente diferente.  
+No sé si lo notas, pero haces que uno se sienta querido,  
+como si supieras exactamente qué decir, incluso en silencio.  
+Tienes una manera tan tuya de estar, y eso se nota. Y vale mucho.
+      </p>
     </div>
   </div>
 
-  <!-- Página 3 (izquierda imagen, derecha texto) -->
-  <div class="book">
-    <div class="page image-page" style="background-image: url('https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg');"></div>
-    <div class="page text-page">
-      <div class="text-box">
-        Gracias por estar, por no irte, por ser tú.  
-        Por hacerme sentir bien solo con hablarme.  
-        Por tener ese corazón tan bonito.  
-        Eres de esas personas que no se olvidan,  
-        porque lo que das, se siente de verdad.
-      </div>
+  <!-- Página 5 (Imagen) -->
+  <div class="page">
+    <img src="https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg" alt="Imagen 3" />
+  </div>
+
+  <!-- Página 6 (Texto) -->
+  <div class="page">
+    <div class="text-content">
+      <p>
+Gracias por estar, por no irte, por ser tú.  
+Por hacerme sentir bien solo con hablarme.  
+Por tener ese corazón tan bonito.  
+Eres de esas personas que no se olvidan,  
+porque lo que das, se siente de verdad.
+      </p>
     </div>
   </div>
 
-  <!-- Página 4 (izquierda imagen, derecha texto) -->
-  <div class="book">
-    <div class="page image-page" style="background-image: url('https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg');"></div>
-    <div class="page text-page">
-      <div class="text-box">
-        Hoy es tu día y quería decirte algo simple pero sincero:  
-        me alegra mucho que estés en mi vida.  
-        Me alegra haberte conocido.  
-        Y te deseo todo lo bonito, porque te lo mereces de verdad.  
-        Feliz cumpleaños.
-      </div>
+  <!-- Página 7 (Imagen) -->
+  <div class="page">
+    <img src="https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg" alt="Imagen 4" />
+  </div>
+
+  <!-- Página 8 (Texto final) -->
+  <div class="page">
+    <div class="text-content">
+      <p>
+Hoy es tu día y quería decirte algo simple pero sincero:  
+me alegra mucho que estés en mi vida.  
+Me alegra haberte conocido.  
+Y te deseo todo lo bonito, porque te lo mereces de verdad.  
+Feliz cumpleaños.
+      </p>
     </div>
   </div>
+</div>
+
+<script>
+  $("#flipbook").turn({
+    width: 800,
+    height: 500,
+    autoCenter: true
+  });
+</script>
 
 </body>
 </html>
