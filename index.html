@@ -3,412 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>para Rebeca</title>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/blasten/turn.js@master/lib/turn.min.js"></script>
+  <title>Para Rebeca</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/turn.js@4/turn.min.js"></script>
   <style>
     body {
-      margin: 0;
-      background: #fdf6f1;
-      font-family: 'Georgia', serif;
+      background: #fff5f2;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
     }
-
     #flipbook {
       width: 800px;
       height: 500px;
     }
-
     .page {
-      width: 400px;
-      height: 500px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: white;
       padding: 20px;
       box-sizing: border-box;
+      font-family: "Georgia", serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-
     .page img {
-      width: 100%;
-      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
       object-fit: cover;
     }
-
     .text-content {
-      font-size: 18px;
+      width: 90%;
+      font-size: 16px;
       line-height: 1.6;
       color: #333;
-      white-space: pre-line;
-      padding: 20px;
-    }
-
-    .text-content p {
-      margin: 0;
     }
   </style>
 </head>
 <body>
+  <div id="flipbook">
+    <!-- Página 1: Imagen -->
+    <div class="page">
+      <img src="https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg" alt="Imagen 1">
+    </div>
 
-<div id="flipbook">
-  <!-- Página 1 (Imagen) -->
-  <div class="page">
-    <img src="https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg" alt="Imagen 1" />
-  </div>
+    <!-- Página 2: Texto -->
+    <div class="page">
+      <div class="text-content">
+        Desde que empecé a conocerte, todo fue distinto.<br>
+        Tienes algo que no sé cómo explicar, pero se siente bonito.<br>
+        Eres especial... por cómo hablas, por lo que dices,<br>
+        por esa forma tuya de hacer que todo se sienta más lindo sin esforzarte.
+      </div>
+    </div>
 
-  <!-- Página 2 (Texto) --<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>para Rebeca</title>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/blasten/turn.js@master/lib/turn.min.js"></script>
-  <style>
-    body {
-      margin: 0;
-      background: #fdf6f1;
-      font-family: 'Georgia', serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+    <!-- Página 3: Imagen -->
+    <div class="page">
+      <img src="https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg" alt="Imagen 2">
+    </div>
 
-    #flipbook {
-      width: 800px;
-      height: 500px;
-    }
+    <!-- Página 4: Texto -->
+    <div class="page">
+      <div class="text-content">
+        Eres esa clase de persona que se siente como un lugar seguro.<br>
+        A veces ni hablabas mucho, pero aún así me hacías sentir tranquila.<br>
+        Como si con solo estar ahí, ya bastara.
+      </div>
+    </div>
 
-    .page {
-      width: 400px;
-      height: 500px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      box-sizing: border-box;
-    }
+    <!-- Página 5: Imagen -->
+    <div class="page">
+      <img src="https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg" alt="Imagen 3">
+    </div>
 
-    .page img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    <!-- Página 6: Texto -->
+    <div class="page">
+      <div class="text-content">
+        Siempre he pensado que hay personas que llegan como luz, y tú eres una de esas.<br>
+        Con tu forma de ser, tu energía, tu cariño...<br>
+        Me hiciste ver las cosas de otra manera.<br>
+        Me hiciste sentir vista.
+      </div>
+    </div>
 
-    .text-content {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #333;
-      white-space: pre-line;
-      padding: 20px;
-    }
+    <!-- Página 7: Imagen -->
+    <div class="page">
+      <img src="https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg" alt="Imagen 4">
+    </div>
 
-    .text-content p {
-      margin: 0;
-    }
-  </style>
-</head>
-<body>
-
-<div id="flipbook">
-  <!-- Página 1 (Imagen) -->
-  <div class="page">
-    <img src="https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg" alt="Imagen 1" />
-  </div>
-
-  <!-- Página 2 (Texto) -->
->
-  <div class="page">
-    <div class="text-content">
-      <p>
-Desde que empecé a conocerte, todo fue distinto.  
-Tienes algo que no sé cómo explicar, pero se siente bonito.  
-Eres especial… por cómo hablas, por lo que dices,  
-por esa forma tuya de hacer que todo se sienta más lindo sin esforzarte.
-      </p>
+    <!-- Página 8: Texto final -->
+    <div class="page">
+      <div class="text-content">
+        Gracias por existir y por ser como eres.<br>
+        Por ser parte de mi vida, aunque sea un ratico.<br>
+        Feliz cumpleaños, de verdad.<br>
+        Espero que este día esté lleno de cosas bonitas, como tú.
+      </div>
     </div>
   </div>
 
-  <!-- Página 3 (Imagen) -->
-  <div class="page">
-    <img src="https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg" alt="Imagen 2" />
-  </div>
-
-  <!-- Página 4 (Texto) -->
-  <div class="page">
-    <div class="text-content">
-      <p>
-Contigo todo se siente diferente.  
-No sé si lo notas, pero haces que uno se sienta querido,  
-como si supieras exactamente qué decir, incluso en silencio.  
-Tienes una manera tan tuya de estar, y eso se nota. Y vale mucho.
-      </p>
-    </div>
-  </div>
-
-  <!-- Página 5 (Imagen) -->
-  <div class="page">
-    <img src="https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg" alt="Imagen 3" />
-  </div>
-
-  <!-- Página 6 (Texto) -->
-  <div class="page">
-    <div class="text-content">
-      <p>
-Gracias por estar, por no irte, por ser tú.  
-Por hacerme sentir bien solo con hablarme.  
-Por tener ese corazón tan bonito.  
-Eres de esas personas que no se olvidan,  
-porque lo que das, se siente de verdad.
-      </p>
-    </div>
-  </div>
-
-  <!-- Página 7 (Imagen) -->
-  <div class="page">
-    <img src="https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg" alt="Imagen 4" />
-  </div>
-
-  <!-- Página 8 (Texto final) -->
-  <div class="page">
-    <div class="text-content">
-      <p>
-Hoy es tu día y quería decirte algo simple pero sincero:  
-me alegra mucho que estés en mi vida.  
-Me alegra haberte conocido.  
-Y te deseo todo lo bonito, porque te lo mereces de verdad.  
-Feliz cumpleaños.
-      </p>
-    </div>
-  </div>
-</div>
-
-<script>
-  $("#flipb<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>para Rebeca</title>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/blasten/turn.js@master/lib/turn.min.js"></script>
-  <style>
-    body {
-      margin: 0;
-      background: #fdf6f1;
-      font-family: 'Georgia', serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    #flipbook {
-      width: 800px;
-      height: 500px;
-    }
-
-    .page {
-      width: 400px;
-      height: 500px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .page img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .text-content {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #333;
-      white-space: pre-line;
-      padding: 20px;
-    }
-
-    .text-content p {
-      margin: 0;
-    }
-  </style>
-</head>
-<body>
-
-<div id="flipbook">
-  <!-- Página 1 (Imagen) -->
-  <div class="page">
-    <img src="https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg" alt="Imagen 1" />
-  </div>
-
-  <!-- Página 2 (Texto) --<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>para Rebeca</title>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/blasten/turn.js@master/lib/turn.min.js"></script>
-  <style>
-    body {
-      margin: 0;
-      background: #fdf6f1;
-      font-family: 'Georgia', serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    #flipbook {
-      width: 800px;
-      height: 500px;
-    }
-
-    .page {
-      width: 400px;
-      height: 500px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .page img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .text-content {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #333;
-      white-space: pre-line;
-      padding: 20px;
-    }
-
-    .text-content p {
-      margin: 0;
-    }
-  </style>
-</head>
-<body>
-
-<div id="flipbook">
-  <!-- Página 1 (Imagen) -->
-  <div class="page">
-    <img src="https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg" alt="Imagen 1" />
-  </div>
-
-  <!-- Página 2 (Texto) -->
->
-  <div class="page">
-    <div class="text-content">
-      <p>
-Desde que empecé a conocerte, todo fue distinto.  
-Tienes algo que no sé cómo explicar, pero se siente bonito.  
-Eres especial… por cómo hablas, por lo que dices,  
-por esa forma tuya de hacer que todo se sienta más lindo sin esforzarte.
-      </p>
-    </div>
-  </div>
-
-  <!-- Página 3 (Imagen) -->
-  <div class="page">
-    <img src="https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg" alt="Imagen 2" />
-  </div>
-
-  <!-- Página 4 (Texto) -->
-  <div class="page">
-    <div class="text-content">
-      <p>
-Contigo todo se siente diferente.  
-No sé si lo notas, pero haces que uno se sienta querido,  
-como si supieras exactamente qué decir, incluso en silencio.  
-Tienes una manera tan tuya de estar, y eso se nota. Y vale mucho.
-      </p>
-    </div>
-  </div>
-
-  <!-- Página 5 (Imagen) -->
-  <div class="page">
-    <img src="https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg" alt="Imagen 3" />
-  </div>
-
-  <!-- Página 6 (Texto) -->
-  <div class="page">
-    <div class="text-content">
-      <p>
-Gracias por estar, por no irte, por ser tú.  
-Por hacerme sentir bien solo con hablarme.  
-Por tener ese corazón tan bonito.  
-Eres de esas personas que no se olvidan,  
-porque lo que das, se siente de verdad.
-      </p>
-    </div>
-  </div>
-
-  <!-- Página 7 (Imagen) -->
-  <div class="page">
-    <img src="https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg" alt="Imagen 4" />
-  </div>
-
-  <!-- Página 8 (Texto final) -->
-  <div class="page">
-    <div class="text-content">
-      <p>
-Hoy es tu día y quería decirte algo simple pero sincero:  
-me alegra mucho que estés en mi vida.  
-Me alegra haberte conocido.  
-Y te deseo todo lo bonito, porque te lo mereces de verdad.  
-Feliz cumpleaños.
-      </p>
-    </div>
-  </div>
-</div>
-
-<script>
-  $("#flipbook").turn({
-    width: 800,
-    height: 500,
-    autoCenter: true
-  });
-</script>
-
-</body>
-</html>
-ook").turn({
-    width: 800,
-    height: 500,
-    autoCenter: true
-  });
-</script>
-
+  <script>
+    $("#flipbook").turn({
+      width: 800,
+      height: 500,
+      autoCenter: true
+    });
+  </script>
 </body>
 </html>
