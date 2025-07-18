@@ -3,24 +3,27 @@
   <meta charset="UTF-8">
   <title>Feliz Cumpleaños</title>
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }body {
-  font-family: 'Georgia', serif;
-  background-color: #f5f5f5;
-  overflow: hidden;
+      font-family: 'Georgia', serif;
+      background-color: #f5f5f5;
+      overflow: hidden;
+    }.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
 }
 
 .book {
   width: 90vw;
+  max-width: 900px;
   height: 90vh;
-  margin: auto;
-  margin-top: 5vh;
-  display: flex;
-  flex-direction: row;
-  perspective: 2000px;
+  max-height: 600px;
+  perspective: 2500px;
   position: relative;
 }
 
@@ -28,17 +31,21 @@
   width: 100%;
   height: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  transform-origin: left;
   transform-style: preserve-3d;
   transition: transform 1s;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .page-content {
   display: flex;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
 .image-side, .text-side {
@@ -61,75 +68,121 @@
   font-weight: bold;
   font-style: italic;
   text-shadow: 1px 1px 3px #000;
-}
-
-.text-side p {
   font-size: 1.5rem;
   line-height: 1.7;
 }
 
-.page:nth-child(1) { z-index: 4; }
-.page:nth-child(2) { z-index: 3; }
-.page:nth-child(3) { z-index: 2; }
-.page:nth-child(4) { z-index: 1; }
+.buttons {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
 
-.book:hover .page:nth-child(1) { transform: rotateY(-180deg); }
-.book:hover .page:nth-child(2) { transform: rotateY(-180deg); transition-delay: 0.3s; }
-.book:hover .page:nth-child(3) { transform: rotateY(-180deg); transition-delay: 0.6s; }
-.book:hover .page:nth-child(4) { transform: rotateY(-180deg); transition-delay: 0.9s; }
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background-color: #d48cb0;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: scale(0.95);
+}
 
   </style>
 </head>
 <body>
-  <div class="book">
-    <div class="page">
-      <div class="page-content">
-        <div class="image-side" style="background-image: url('https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg');"></div>
-        <div class="text-side">
-          <p>Desde que empecé a conocerte, todo fue distinto.<br>
-          Tienes algo que no sé cómo explicar, pero se siente bonito.<br>
-          Eres especial… por cómo hablas, por lo que dices,<br>
-          por esa forma tuya de hacer que todo se sienta más lindo sin esforzarte.</p>
+  <div class="container">
+    <div class="book" id="book">
+      <div class="page" id="page1" style="z-index: 4;">
+        <div class="page-content">
+          <div class="image-side" style="background-image: url('https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg');"></div>
+          <div class="text-side">
+            <p>Desde que empecé a conocerte, todo fue distinto.<br>
+            Tienes algo que no sé cómo explicar, pero se siente bonito.<br>
+            Eres especial… por cómo hablas, por lo que dices,<br>
+            por esa forma tuya de hacer que todo se sienta más lindo sin esforzarte.</p>
+          </div>
         </div>
+      </div><div class="page" id="page2" style="z-index: 3;">
+    <div class="page-content">
+      <div class="image-side" style="background-image: url('https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg');"></div>
+      <div class="text-side">
+        <p>Contigo todo se siente diferente.<br>
+        No sé si lo notas, pero haces que uno se sienta querido,<br>
+        como si supieras exactamente qué decir, incluso en silencio.<br>
+        Tienes una manera tan tuya de estar, y eso se nota. Y vale mucho.</p>
       </div>
-    </div><div class="page">
-  <div class="page-content">
-    <div class="image-side" style="background-image: url('https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg');"></div>
-    <div class="text-side">
-      <p>Contigo todo se siente diferente.<br>
-      No sé si lo notas, pero haces que uno se sienta querido,<br>
-      como si supieras exactamente qué decir, incluso en silencio.<br>
-      Tienes una manera tan tuya de estar, y eso se nota. Y vale mucho.</p>
     </div>
+  </div>
+
+  <div class="page" id="page3" style="z-index: 2;">
+    <div class="page-content">
+      <div class="image-side" style="background-image: url('https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg');"></div>
+      <div class="text-side">
+        <p>Gracias por estar, por no irte, por ser tú.<br>
+        Por hacerme sentir bien solo con hablarme.<br>
+        Por tener ese corazón tan bonito.<br>
+        Eres de esas personas que no se olvidan,<br>
+        porque lo que das, se siente de verdad.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" id="page4" style="z-index: 1;">
+    <div class="page-content">
+      <div class="image-side" style="background-image: url('https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg');"></div>
+      <div class="text-side">
+        <p>Hoy es tu día y quería decirte algo simple pero sincero:<br>
+        me alegra mucho que estés en mi vida.<br>
+        Me alegra haberte conocido.<br>
+        Y te deseo todo lo bonito, porque te lo mereces de verdad.<br>
+        Feliz cumpleaños</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button onclick="prevPage()">← Anterior</button>
+    <button onclick="nextPage()">Siguiente →</button>
   </div>
 </div>
 
-<div class="page">
-  <div class="page-content">
-    <div class="image-side" style="background-image: url('https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg');"></div>
-    <div class="text-side">
-      <p>Gracias por estar, por no irte, por ser tú.<br>
-      Por hacerme sentir bien solo con hablarme.<br>
-      Por tener ese corazón tan bonito.<br>
-      Eres de esas personas que no se olvidan,<br>
-      porque lo que das, se siente de verdad.</p>
-    </div>
-  </div>
-</div>
+  </div>  <script>
+    let currentPage = 1;
+    const totalPages = 4;
 
-<div class="page">
-  <div class="page-content">
-    <div class="image-side" style="background-image: url('https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg');"></div>
-    <div class="text-side">
-      <p>Hoy es tu día y quería decirte algo simple pero sincero:<br>
-      me alegra mucho que estés en mi vida.<br>
-      Me alegra haberte conocido.<br>
-      Y te deseo todo lo bonito, porque te lo mereces de verdad.<br>
-      Feliz cumpleaños</p>
-    </div>
-  </div>
-</div>
+    function updatePages() {
+      for (let i = 1; i <= totalPages; i++) {
+        const page = document.getElementById(`page${i}`);
+        if (i < currentPage) {
+          page.style.transform = "rotateY(-180deg)";
+        } else {
+          page.style.transform = "rotateY(0deg)";
+        }
+      }
+    }
 
-  </div>
-</body>
+    function nextPage() {
+      if (currentPage < totalPages) {
+        currentPage++;
+        updatePages();
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        updatePages();
+      }
+    }
+  </script></body>
 </html>
