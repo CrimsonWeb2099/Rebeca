@@ -2,113 +2,114 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Para Rebeca</title>
+  <title>Feliz cumpleaños Rebeca</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/turn.js@4/turn.min.js"></script>
+  <script src="https://www.turnjs.com/lib/turn.min.js"></script>
   <style>
     body {
-      background: #fff5f2;
+      background-color: #fff5f0;
+      margin: 0;
+      font-family: Georgia, serif;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
     }
+
     #flipbook {
       width: 800px;
       height: 500px;
     }
+
     .page {
-      background: white;
+      background-color: white;
+      width: 400px;
+      height: 500px;
       padding: 20px;
       box-sizing: border-box;
-      font-family: "Georgia", serif;
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
-    .page img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: cover;
-    }
-    .text-content {
-      width: 90%;
-      font-size: 16px;
-      line-height: 1.6;
+
+    .tapa {
+      background-color: #ffd2dc;
       color: #333;
+      font-size: 28px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .content-page {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .content-page img {
+      max-width: 48%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .content-page p {
+      width: 48%;
+      font-size: 17px;
+      line-height: 1.5;
+      text-align: left;
     }
   </style>
 </head>
 <body>
-  <div id="flipbook">
-    <!-- Página 1: Imagen -->
-    <div class="page">
-      <img src="https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg" alt="Imagen 1">
-    </div>
 
-    <!-- Página 2: Texto -->
-    <div class="page">
-      <div class="text-content">
-        Desde que empecé a conocerte, todo fue distinto.<br>
-        Tienes algo que no sé cómo explicar, pero se siente bonito.<br>
-        Eres especial... por cómo hablas, por lo que dices,<br>
-        por esa forma tuya de hacer que todo se sienta más lindo sin esforzarte.
-      </div>
-    </div>
+<div id="flipbook">
+  <!-- Tapa -->
+  <div class="page tapa">Feliz cumpleaños Rebeca</div>
 
-    <!-- Página 3: Imagen -->
-    <div class="page">
-      <img src="https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg" alt="Imagen 2">
-    </div>
-
-    <!-- Página 4: Texto -->
-    <div class="page">
-      <div class="text-content">
-        Eres esa clase de persona que se siente como un lugar seguro.<br>
-        A veces ni hablabas mucho, pero aún así me hacías sentir tranquila.<br>
-        Como si con solo estar ahí, ya bastara.
-      </div>
-    </div>
-
-    <!-- Página 5: Imagen -->
-    <div class="page">
-      <img src="https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg" alt="Imagen 3">
-    </div>
-
-    <!-- Página 6: Texto -->
-    <div class="page">
-      <div class="text-content">
-        Siempre he pensado que hay personas que llegan como luz, y tú eres una de esas.<br>
-        Con tu forma de ser, tu energía, tu cariño...<br>
-        Me hiciste ver las cosas de otra manera.<br>
-        Me hiciste sentir vista.
-      </div>
-    </div>
-
-    <!-- Página 7: Imagen -->
-    <div class="page">
-      <img src="https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg" alt="Imagen 4">
-    </div>
-
-    <!-- Página 8: Texto final -->
-    <div class="page">
-      <div class="text-content">
-        Gracias por existir y por ser como eres.<br>
-        Por ser parte de mi vida, aunque sea un ratico.<br>
-        Feliz cumpleaños, de verdad.<br>
-        Espero que este día esté lleno de cosas bonitas, como tú.
-      </div>
-    </div>
+  <!-- Página 1 -->
+  <div class="page content-page" style="background-color:#ffeef2;">
+    <img src="https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg" alt="Foto 1">
+    <p>
+      Hay personas que simplemente llegan y lo cambian todo, y tú fuiste una de esas. Siempre logras que me sienta bien sin siquiera intentarlo. Me encanta cómo hablas, cómo te expresas, lo inteligente que eres, tu forma de pensar y esa sensibilidad tan tuya.
+    </p>
   </div>
 
-  <script>
-    $("#flipbook").turn({
-      width: 800,
-      height: 500,
-      autoCenter: true
-    });
-  </script>
+  <!-- Página 2 -->
+  <div class="page content-page" style="background-color:#fef7ec;">
+    <img src="https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg" alt="Foto 2">
+    <p>
+      Me encanta cuando me cuentas de tu familia, de tu día, de lo que piensas. A veces ni te das cuenta, pero me sacas sonrisas con solo existir. Tienes un corazón tan bonito que es imposible no quererte.
+    </p>
+  </div>
+
+  <!-- Página 3 -->
+  <div class="page content-page" style="background-color:#e6f5ff;">
+    <img src="https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg" alt="Foto 3">
+    <p>
+      Gracias por estar, por ser tú. Me parece muy especial cómo siempre tienes algo bonito que decir, cómo escuchas, cómo sientes. Eres como un refugio suave y dulce que da calma sin esfuerzo.
+    </p>
+  </div>
+
+  <!-- Página 4 -->
+  <div class="page content-page" style="background-color:#f0eaff;">
+    <img src="https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg" alt="Foto 4">
+    <p>
+      Me siento afortunada de conocerte. Eres más que especial, y aunque las palabras no bastan, espero que este pequeño regalo te saque una sonrisa hoy. Feliz cumpleaños, Rebeca.
+    </p>
+  </div>
+</div>
+
+<script>
+  $("#flipbook").turn({
+    width: 800,
+    height: 500,
+    autoCenter: true
+  });
+</script>
+
 </body>
 </html>
