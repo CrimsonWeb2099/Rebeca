@@ -1,100 +1,97 @@
 <!DOCTYPE html><html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Feliz cumpleaños Rebeca</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/blasten/turn.js@4/turn.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Cumpleaños Rebeca</title>
   <style>
     body {
-      background-color: #fff5f0;
       margin: 0;
-      font-family: Georgia, serif;
+      background-color: #fce4ec;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-    }#flipbook {
-  width: 800px;
-  height: 500px;
+      font-family: 'Segoe UI', sans-serif;
+    }.book {
+  width: 90vw;
+  max-width: 1000px;
+  height: 90vh;
+  background: url('https://i.postimg.cc/Y9RWqC07/libreta-fondo.jpg') center/cover no-repeat;
+  display: flex;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
 }
 
 .page {
-  background-color: white;
-  width: 400px;
-  height: 500px;
-  padding: 0;
+  width: 50%;
+  padding: 40px 30px;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  border-left: 1px dashed #ccc;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-size: 1.1em;
+  line-height: 1.6em;
 }
 
-.page img {
+.spiral {
+  width: 20px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #888,
+    #888 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-}
-
-.texto {
-  padding: 40px;
-  font-size: 16px;
-  text-align: justify;
-  line-height: 1.6;
-}
-
-.tapa {
-  background-color: #ffd2dc;
-  color: #333;
-  font-size: 28px;
-  font-weight: bold;
+  height: 100%;
+  background: url('https://i.postimg.cc/qvHvxZKR/tapa-libro.jpg') center/cover no-repeat;
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  font-size: 2em;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 1s ease;
+  transform-origin: left;
+  border-radius: 12px;
+}
+
+.cover.closed {
+  transform: rotateY(0deg);
+}
+
+.cover.open {
+  transform: rotateY(-180deg);
 }
 
   </style>
 </head>
-<body><div id="flipbook">
-  <!-- Tapa -->
-  <div class="page tapa">Feliz cumpleaños Rebeca</div>  <!-- Página 1 -->  <div class="page">
-    <img src="https://i.postimg.cc/FzqxFqYW/e285e322e7a6c0281ff45659004df017.jpg" />
+<body><div class="book">
+  <div class="cover closed" onclick="abrirLibro(this)">
+    <div>Feliz Cumpleaños Rebeca</div>
+  </div>  <div class="page" id="pagina1">
+    Hoy quería decirte muchas cosas, pero ni sé cómo empezar…
+    A veces siento que no me alcanzan las palabras para lo que siento por ti. Me haces feliz, como no tienes idea.
+  </div>  <div class="spiral"></div>  <div class="page" id="pagina2">
+    Me encantas de formas que ni yo misma sabía que existían.
+    Eres todo lo que me hace bien, y aunque a veces te lo diga con rabia o sarcasmo, te quiero muchísimo.
   </div>
-  <div class="page texto">
-    Desde que empecé a conocerte, todo fue distinto.<br>
-    Tienes algo que no sé cómo explicar, pero se siente bonito.<br>
-    Eres especial… por cómo hablas, por lo que dices,<br>
-    por esa forma tuya de hacer que todo se sienta más lindo sin esforzarte.
-  </div>  <!-- Página 2 -->  <div class="page">
-    <img src="https://i.postimg.cc/WpKmkB4S/69596fab9750eb3add331e383523e72f.jpg" />
-  </div>
-  <div class="page texto">
-    No hay un solo día en que no me acuerde de ti.<br>
-    No sé si lo imaginas, pero estás en muchas de las cosas que me hacen sonreír.<br>
-    Porque cuando pienso en algo bonito, apareces tú.<br>
-    Y eso, para mí, lo cambia todo.
-  </div>  <!-- Página 3 -->  <div class="page">
-    <img src="https://i.postimg.cc/GmjqGXV2/5bc378cc1215123b94dd3fe5243d2f5b.jpg" />
-  </div>
-  <div class="page texto">
-    A veces no hace falta decir nada, y aún así se siente.<br>
-    Se siente que tu forma de estar es distinta, es suave.<br>
-    Como si llevaras calma contigo.<br>
-    Gracias por ser tú, así de única, así de tú.
-  </div>  <!-- Página 4 -->  <div class="page">
-    <img src="https://i.postimg.cc/YS9fgMQn/82eb9aa8706cb9c56e111d6cda19d8a7.jpg" />
-  </div>
-  <div class="page texto">
-    Hoy no solo es tu cumpleaños.<br>
-    Hoy es la excusa perfecta para recordarte que vales un montón.<br>
-    Que todo lo que eres ya es suficiente.<br>
-    Que espero que la vida te devuelva, poquito a poco, todo lo lindo que das.
-  </div>  <!-- Contratapa -->  <div class="page tapa">💗</div>
 </div><script>
-  $("#flipbook").turn({
-    width: 800,
-    height: 500,
-    autoCenter: true
-  });
+  function abrirLibro(cubierta) {
+    cubierta.classList.remove('closed');
+    cubierta.classList.add('open');
+    cubierta.style.zIndex = -1;
+  }
 </script></body>
 </html>
